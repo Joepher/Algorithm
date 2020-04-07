@@ -45,22 +45,22 @@ public class KMPAGL
 			if (ti == target.length)
 			{
 				prefixCounter++;
-				System.out.println("ÔÚµÚ" + (oi - target.length + 2) + "Î»¿ªÊ¼²úÉúµÚ"
-						+ prefixCounter + "´ÎÆ¥Åä");
+				System.out.println("ï¿½Úµï¿½" + (oi - target.length + 2) + "Î»ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
+						+ prefixCounter + "ï¿½ï¿½Æ¥ï¿½ï¿½");
 				ti = NPN[ti - 1] + 1;
 			}
 		}
 		if (prefixCounter == 0)
 		{
-			System.out.println("Ã»ÓÐÕÒµ½Æ¥ÅäÎ»");
+			System.out.println("Ã»ï¿½ï¿½ï¿½Òµï¿½Æ¥ï¿½ï¿½Î»");
 		}
 	}
 
 	public static void main(String[] args)
 	{
-		char[] origin = (" " + JOptionPane.showInputDialog("Ô´×Ö·û´®£º"))
+		char[] origin = (" " + JOptionPane.showInputDialog("Ô´ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½"))
 				.toCharArray();
-		char[] target = (" " + JOptionPane.showInputDialog("Ä¿±ê×Ö·û´®£º"))
+		char[] target = (" " + JOptionPane.showInputDialog("Ä¿ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½"))
 				.toCharArray();
 
 		System.out.print("Î»:          ");
@@ -69,7 +69,7 @@ public class KMPAGL
 			System.out.print(i + " ");
 		}
 		System.out.println();
-		System.out.print("Ô´×Ö·û´®Îª£º     ");
+		System.out.print("Ô´ï¿½Ö·ï¿½ï¿½ï¿½Îªï¿½ï¿½     ");
 		for (int i = 1; i < origin.length; i++)
 		{
 			System.out.print(origin[i]);
@@ -79,7 +79,7 @@ public class KMPAGL
 				System.out.print("  ");
 		}
 		System.out.println();
-		System.out.print("Ä¿±ê×Ö·û´®Îª£º");
+		System.out.print("Ä¿ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 1; i < target.length; i++)
 		{
 			System.out.print(target[i]);

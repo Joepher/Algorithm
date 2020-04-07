@@ -124,7 +124,7 @@ public class ConvexHull extends Point
 			pList.add(j, tmpPoint);
 		}
 
-		System.out.println("Æ½ÃæÉÏµÄµã¼¯¹²ÓÐ" + pList.size() + "¸ö£¬×ø±êÎª£º");
+		System.out.println("Æ½ï¿½ï¿½ï¿½ÏµÄµã¼¯ï¿½ï¿½ï¿½ï¿½" + pList.size() + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 0; i < pList.size(); i++)
 		{
 			System.out.print("(" + pList.get(i).getX() + ","
@@ -134,7 +134,7 @@ public class ConvexHull extends Point
 
 		new ConvexHull().sortPoint(pList);
 
-		System.out.println("ÅÅÐòºóÆ½ÃæÉÏµÄµã¼¯¹²ÓÐ" + pList.size() + "¸ö£¬×ø±êÎª£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ÏµÄµã¼¯ï¿½ï¿½ï¿½ï¿½" + pList.size() + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 0; i < pList.size(); i++)
 		{
 			System.out.print("(" + pList.get(i).getX() + ","
@@ -143,7 +143,7 @@ public class ConvexHull extends Point
 		System.out.println();
 
 		new ConvexHull().findConvexHull(pList, cHPList);
-		System.out.println("Éú³ÉµÄÍ¹°üµã¹²ÓÐ" + cHPList.size() + "¸ö£¬×ø±êÎª£º");
+		System.out.println("ï¿½ï¿½ï¿½Éµï¿½Í¹ï¿½ï¿½ï¿½ã¹²ï¿½ï¿½" + cHPList.size() + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 0; i < cHPList.size(); i++)
 		{
 			System.out.print("(" + cHPList.get(i).getX() + ","

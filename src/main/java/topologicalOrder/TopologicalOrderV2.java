@@ -84,7 +84,7 @@ public class TopologicalOrderV2 extends GNode
 		TopologicalOrderV2 tV2 = new TopologicalOrderV2();
 		tV2.GraphInit(gNodeList);
 
-		System.out.println("споРм╪╡исцаз╫с╠М╥╫й╫╢Ф╢╒╣д╫А╧Шн╙ё╨");
+		System.out.println("О©╫О©╫О©╫О©╫м╪О©╫О©╫О©╫О©╫О©╫з╫с╠О©╫й╫О©╫Ф╢╒О©╫д╫О©╫О©╫н╙О©╫О©╫");
 		for (int i = 0; i < gNodeList.size(); i++)
 		{
 			System.out.print(gNodeList.get(i).data);

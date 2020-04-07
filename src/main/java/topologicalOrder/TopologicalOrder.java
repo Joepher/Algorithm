@@ -98,7 +98,7 @@ public class TopologicalOrder extends Node
 		TopologicalOrder tOrder = new TopologicalOrder();
 
 		tOrder.creatAdjacencyList(nListTabel);
-		System.out.println("ÁÚ½Ó±íÖÐµÄÄÚÈÝÎª£º");
+		System.out.println("ï¿½Ú½Ó±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 1; i < nListTabel.size(); i++)
 		{
 			System.out.print(nListTabel.get(i).data);
@@ -117,7 +117,7 @@ public class TopologicalOrder extends Node
 		}
 
 		tOrder.findInnerDegree(nListTabel);
-		System.out.println("¸÷µãÈë¶ÈÎª£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 1; i < nListTabel.size(); i++)
 		{
 			System.out.println(nListTabel.get(i).data + ": "
@@ -125,7 +125,7 @@ public class TopologicalOrder extends Node
 		}
 
 		tOrder.DFS(tOrder.findStartNode(nListTabel), nListTabel, nListtoporder);
-		System.out.println("ÍØÆËÅÅÐò½á¹ûÎª£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½");
 		for (int i = 0; i < nListtoporder.size(); i++)
 		{
 			System.out.print(nListtoporder.get(i).data + " ");

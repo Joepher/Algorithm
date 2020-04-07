@@ -6,7 +6,7 @@ public class TermFrenCounter
 {
 	public static void main(String[] args)
 	{
-		String str = "ÄãºÃ£¬ÄãÊÇË­£¬£¬£¬ÄãÄã";
+		String str = "ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ë­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		Term term = new Term();
 		List<Term> highFrenqTerms = term.findHighFrenqTerm(term.findFrenqTerm(str));
 

@@ -21,11 +21,11 @@ public class AVLTree
 	{
 		if (sNode == null)
 		{
-			System.out.println("Î´ÕÒµ½½áµãNode[" + key + "]");
+			System.out.println("Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½Node[" + key + "]");
 			return null;
 		}
 		if (key == sNode.Data)
-			System.out.println("ÒÑÕÒµ½½áµãNode[" + sNode.Data + "] Height="
+			System.out.println("ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½Node[" + sNode.Data + "] Height="
 					+ sNode.Height);
 		else if (key < sNode.Data)
 			sNode = search(sNode.Lchild, key);
@@ -44,10 +44,10 @@ public class AVLTree
 			sNode.Lchild = null;
 			sNode.Rchild = null;
 
-			System.out.println("½áµãNode[" + key + "]²åÈë³É¹¦");
+			System.out.println("ï¿½ï¿½ï¿½Node[" + key + "]ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 		}
 		else if (key == sNode.Data)
-			System.out.println("½áµãNode[" + sNode.Data + "]²åÈëÊ§°Ü£ºÒÑ´æÔÚ£¬²»ÔÊÐíÖØ¸´²åÈë");
+			System.out.println("ï¿½ï¿½ï¿½Node[" + sNode.Data + "]ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½Ñ´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½");
 		else if (key < sNode.Data)
 		{
 			sNode.Lchild = insert(sNode.Lchild, key);
@@ -79,7 +79,7 @@ public class AVLTree
 	{
 		if (sNode == null)
 		{
-			System.out.println("É¾³ýÊ§°Ü£ºÎ´ÕÒµ½½áµãNode[" + key + "]");
+			System.out.println("É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½Node[" + key + "]");
 			return null;
 		}
 		if (key == sNode.Data)
@@ -149,9 +149,9 @@ public class AVLTree
 			if (key == list.get(i).Data)
 			{
 				if (i == 0)
-					System.out.println("½áµãNode[" + key + "]ÎÞÇ°Çý½áµã");
+					System.out.println("ï¿½ï¿½ï¿½Node[" + key + "]ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½");
 				else
-					System.out.println("½áµãNode[" + key + "]µÄÇ°Çý½áµãÎªNode["
+					System.out.println("ï¿½ï¿½ï¿½Node[" + key + "]ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ÎªNode["
 							+ list.get(i - 1).Data + "]");
 				break;
 			}
@@ -167,9 +167,9 @@ public class AVLTree
 			if (key == list.get(i).Data)
 			{
 				if (i == list.size() - 1)
-					System.out.println("½áµãNode[" + key + "]ÎÞºó¼Ì½áµã");
+					System.out.println("ï¿½ï¿½ï¿½Node[" + key + "]ï¿½Þºï¿½Ì½ï¿½ï¿½");
 				else
-					System.out.println("½áµãNode[" + key + "]µÄºó¼Ì½áµãÎªNode["
+					System.out.println("ï¿½ï¿½ï¿½Node[" + key + "]ï¿½Äºï¿½Ì½ï¿½ï¿½ÎªNode["
 							+ list.get(i + 1).Data + "]");
 				break;
 			}
@@ -270,7 +270,7 @@ public class AVLTree
 			System.out.println();
 			choose = Integer
 					.parseInt(JOptionPane
-							.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nChoose an operation£º"));
+							.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nChoose an operationï¿½ï¿½"));
 
 			switch (choose)
 			{
@@ -280,12 +280,12 @@ public class AVLTree
 									root,
 									Integer
 											.parseInt(JOptionPane
-													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the key£º")));
+													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the keyï¿½ï¿½")));
 					break;
 				case 2:
 					String[] inNode = JOptionPane
 							.showInputDialog(
-									"*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the key£º")
+									"*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the keyï¿½ï¿½")
 							.toString().split(",");
 
 					for (int i = 0; i < inNode.length; i++)
@@ -299,7 +299,7 @@ public class AVLTree
 									root,
 									Integer
 											.parseInt(JOptionPane
-													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the key£º")));
+													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the keyï¿½ï¿½")));
 					break;
 				case 4:
 					th
@@ -307,7 +307,7 @@ public class AVLTree
 									root,
 									Integer
 											.parseInt(JOptionPane
-													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the key£º")));
+													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the keyï¿½ï¿½")));
 					break;
 				case 5:
 					th
@@ -315,7 +315,7 @@ public class AVLTree
 									root,
 									Integer
 											.parseInt(JOptionPane
-													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the key£º")));
+													.showInputDialog("*1  Search\n*2  Insert\n*3  Delete\n*4  Presuccessor\n*5  Successor\n*6  Display\n*7  Exit\nEnter the keyï¿½ï¿½")));
 					break;
 				case 6:
 					th.display(root);

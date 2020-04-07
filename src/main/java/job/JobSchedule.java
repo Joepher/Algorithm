@@ -1,28 +1,29 @@
 package job;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 class MyJob
 {
-	public int j_id; /* ¶¨Òå×÷ÒµID */
-	public int j_deadline; /* ¶¨Òå×÷ÒµÆÚÏÞ */
-	public int j_benefit; /* ¶¨Òå×÷ÒµÐ§Òæ */
+	public int j_id; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµID */
+	public int j_deadline; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ */
+	public int j_benefit; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÐ§ï¿½ï¿½ */
 }
 
 public class JobSchedule
 {
-	private List<MyJob> jobList = new ArrayList<MyJob>();/* ×÷ÒµÁÐ±í */
-	private List<Boolean> visit = new ArrayList<Boolean>();/* ¸ÃÊ±¼ä¶Î´¦Àí»úÊÇ·ñ¿ÕÏÐ */
-	private List<Integer> processorlist = new ArrayList<Integer>();/* ´¦Àí»ú´¦ÀíµÄ×÷Òµ±àºÅ */
-	private int maxBenefit;/* ×î´óÐ§Òæ */
+	private List<MyJob> jobList = new ArrayList<MyJob>();/* ï¿½ï¿½Òµï¿½Ð±ï¿½ */
+	private List<Boolean> visit = new ArrayList<Boolean>();/* ï¿½ï¿½Ê±ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ */
+	private List<Integer> processorlist = new ArrayList<Integer>();/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ */
+	private int maxBenefit;/* ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ */
 
-	/* ³õÊ¼»¯ËùÓÐ×÷Òµ */
+	/* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµ */
 	private void JobInit()
 	{
 		int job_init[][] = { { 1, 1, 10 }, { 2, 2, 25 }, { 3, 3, 15 },
 				{ 4, 1, 5 }, { 5, 2, 30 }, { 6, 3, 15 } };
-		/* ½«×÷ÒµÌí¼Óµ½×÷ÒµÁÐ±íÖÐ */
+		/* ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Óµï¿½ï¿½ï¿½Òµï¿½Ð±ï¿½ï¿½ï¿½ */
 		for (int i = 0; i < job_init.length; i++)
 		{
 			MyJob tmpJob = new MyJob();
@@ -31,51 +32,44 @@ public class JobSchedule
 			tmpJob.j_benefit = job_init[i][2];
 			jobList.add(tmpJob);
 		}
-		/* ³õÊ¼»¯ËùÓÐÊ±¼ä¶Î´¦Àí»ú¾ùÎª¿ÉÓÃ×´Ì¬ */
+		/* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½×´Ì¬ */
 		for (int j = 0; j < jobList.size(); j++)
 			visit.add(false);
-		/* ³õÊ¼»¯×î´óÐ§Òæ */
+		/* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ */
 		maxBenefit = 0;
 	}
 
-	/* °´×÷ÒµÐ§Òæ½µÐò½øÐÐÅÅÐò £ºÑ¡ÔñÅÅÐòËã·¨ */
+	/* ï¿½ï¿½ï¿½ï¿½ÒµÐ§ï¿½æ½µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ */
 	private void SortByBenefit()
 	{
-		for (int i = 0; i < jobList.size() - 1; i++)
-		{
-			for (int j = i + 1; j < jobList.size(); ++j)
-			{
-				if (jobList.get(i).j_benefit < jobList.get(j).j_benefit)
-				{
-					MyJob tmpJob = new MyJob();
-					tmpJob = jobList.get(i);
-					jobList.set(i, jobList.get(j));
-					jobList.set(j, tmpJob);
-				}
+		jobList.sort(new Comparator<MyJob>() {
+			@Override
+			public int compare(MyJob o1, MyJob o2) {
+				return  o1.j_benefit - o2.j_benefit;
 			}
-		}
+		});
 	}
 
-	/* ×÷Òµµ÷¶È */
+	/* ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ */
 	private void JobScheduling()
 	{
 
 		for (int i = 0; i < jobList.size(); i++)
 		{
-			/* Èç¹ûµ±Ç°×÷Òµ½ØÖ¹ÆÚÏÞÊ±¿ÌÓÐ¿ÉÓÃ´¦Àí»ú£¬Ôòµ÷¶È¸Ã×÷Òµ½øÐÐ´¦Àí */
+			/* ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Òµï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ */
 			if (!visit.get(jobList.get(i).j_deadline))
 			{
-				/* ÉèÖÃµ±Ç°Ê±¿Ì¸Ã´¦Àí»úÒÑ±»Õ¼ÓÃ */
+				/* ï¿½ï¿½ï¿½Ãµï¿½Ç°Ê±ï¿½Ì¸Ã´ï¿½ï¿½ï¿½ï¿½ï¿½Ñ±ï¿½Õ¼ï¿½ï¿½ */
 				visit.set(jobList.get(i).j_deadline, true);
-				/* ½«¸Ã×÷ÒµÌí¼Óµ½ÒÑ´¦Àí×÷ÒµÁÐ±íÖÐ */
+				/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Óµï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ð±ï¿½ï¿½ï¿½ */
 				processorlist.add(jobList.get(i).j_id);
-				/* ¸üÐÂÒÑ´´ÔìµÄ×î´óÐ§Òæ */
+				/* ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ */
 				maxBenefit += jobList.get(i).j_benefit;
 			}
 		}
 	}
 
-	/* ´òÓ¡×÷Òµµ÷¶È½á¹û */
+	/* ï¿½ï¿½Ó¡ï¿½ï¿½Òµï¿½ï¿½ï¿½È½ï¿½ï¿½ */
 	private void JobSchedulingResult()
 	{
 		int i = 0;
@@ -89,7 +83,7 @@ public class JobSchedule
 		System.out.println("The maxBenefit is " + maxBenefit);
 	}
 
-	/* ´òÓ¡×÷Òµ */
+	/* ï¿½ï¿½Ó¡ï¿½ï¿½Òµ */
 	private void JobPrint()
 	{
 		System.out.println("********Job Details********");
@@ -103,11 +97,11 @@ public class JobSchedule
 	public static void main(String[] args)
 	{
 		JobSchedule js = new JobSchedule();
-		js.JobInit();/* ×÷Òµ³õÊ¼»¯ */
-		js.JobPrint();/* ´òÓ¡×÷Òµ */
-		js.SortByBenefit();/* ×÷ÒµÅÅÐò */
-		js.JobPrint();/* ´òÓ¡×÷Òµ */
-		js.JobScheduling();/* ×÷Òµµ÷¶È */
-		js.JobSchedulingResult();/* ×÷Òµµ÷¶È½á¹û */
+		js.JobInit();/* ï¿½ï¿½Òµï¿½ï¿½Ê¼ï¿½ï¿½ */
+		js.JobPrint();/* ï¿½ï¿½Ó¡ï¿½ï¿½Òµ */
+		js.SortByBenefit();/* ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ */
+		js.JobPrint();/* ï¿½ï¿½Ó¡ï¿½ï¿½Òµ */
+		js.JobScheduling();/* ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ */
+		js.JobSchedulingResult();/* ï¿½ï¿½Òµï¿½ï¿½ï¿½È½ï¿½ï¿½ */
 	}
 }
