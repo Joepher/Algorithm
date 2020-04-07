@@ -21,12 +21,12 @@ public class Solution1169 {
                 detailMap.put(array[3], timeList);
                 continue;
             }
-            for (Map.Entry<String, List<Integer>> entry: detailMap.entrySet()) {
+            for (Map.Entry<String, List<Integer>> entry : detailMap.entrySet()) {
                 if (array[3].equals(entry.getKey())) {
                     continue;
                 }
                 for (Integer time : entry.getValue()) {
-                    if (curTime - time <= 60 || time- curTime <= 60) {
+                    if (curTime - time <= 60 || time - curTime <= 60) {
                         invalidList.add(transaction);
                         break;
                     }
